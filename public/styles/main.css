@@ -1,0 +1,61 @@
+body {
+    background-color: #202020;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr;
+    
+}
+
+h1 {
+    color: white;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+
+form {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+
+}
+
+.text-box {
+    height: 2rem;
+    width: 20rem;
+    
+    background-color: black;
+
+    border: 2px solid #565b5e;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.button {
+    background-color: #2596be;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+    height: 2rem;
+    width: 10rem;
+}
+
+.container {
+    /* background-color: #808080; */
+    background-color: #1a1a1b;
+    height: 50vh;
+    
+    padding-left: 25px;
+    padding-right: 25px;
+
+    grid-column: 2;
+    grid-row: 3;
+}
+
+post > p{
+    background-color: #2596be;
+    padding-left: 10px;
+    color: white;
+}

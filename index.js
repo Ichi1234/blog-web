@@ -6,6 +6,8 @@ const port = 3000;
 
 var postData = [];
 
+app.use(express.static("public"));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
