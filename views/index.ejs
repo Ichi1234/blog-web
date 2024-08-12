@@ -3,16 +3,22 @@
 
 <h1 class="home">Welcome to Blog-Post website!</h1>
 
+<div class="feature container">
 
+    <form action="/submit" method="POST">
+        <h3 class="feature-title search">Search:</h3>
+        <input class="text-box" type="text" name="post-header" placeholder="Type your post title here...">
+        <input class="search button" type="submit" value="Search">
+    </form>
 
-<form action="/submit" method="POST">
-    <h3 id="search">Search:</h3>
-    <input class="text-box" type="text" name="post-header" placeholder="Type your post title here...">
-    <input class="search button" type="submit" value="Search">
-</form>
+    <form action="/page" method="POST">
+        <h3 class="feature-title page">Change Page:</h3>
+        <input class="text-box" type="text" name="post-header" placeholder="Type page number here...">
+        <input class="page button" type="submit" value="Enter">
+    </form>
+</div>
 
 <div class="post container">
-
     <% if (data != []) { %>
         <% for (let i=0; i < data.length; i++) { %>
             <post>

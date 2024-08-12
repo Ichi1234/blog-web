@@ -44,14 +44,21 @@ h1.home {
     height: 0.1rem;
 }
 
-form {
-    grid-column: 2;
+form > .search{
+    grid-column: 3;
     grid-row: 3;
     justify-self: center;
 
 }
 
-#search {
+form > .page{
+    grid-column: 3;
+    grid-row: 4;
+    justify-self: center;
+
+}
+
+.feature-title {
     color: white;
 }
 
@@ -66,7 +73,7 @@ form {
     margin-right: 10px;
 }
 
-.search {
+.search.button , .page.button {
     background-color: #2596be;
     color: white;
 
@@ -77,19 +84,27 @@ form {
 }
 
 .container {
-    /* background-color: #808080; */
     background-color: #001226;
-    height: 50vh;
     padding: 25px;
     box-sizing: border-box;
- 
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+.post.container {
+    height: 60vh;
 
     /* Grid here */
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 3;
+}
+
+.feature.container {
+    height: 34vh;
+
+    /* Grid here */
+    grid-column: 3;
+    grid-row: 3;
 }
 
 post > a {
