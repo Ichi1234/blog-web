@@ -1,0 +1,23 @@
+{
+  "name": "blog-web",
+  "version": "1.0.0",
+  "description": "Users can use this website to create post.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ichi1234/blog-web.git"
+  },
+  "author": "Kasidet Uthaiwiwatkul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ichi1234/blog-web/issues"
+  },
+  "homepage": "https://github.com/Ichi1234/blog-web#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
