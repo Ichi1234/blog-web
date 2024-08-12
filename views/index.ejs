@@ -1,10 +1,14 @@
 <%- include("partials/header.ejs") %>
 
-<h1>Welcome to Blog-post website!</h1>
+
+<h1 class="home">Welcome to Blog-Post website!</h1>
+
+
 
 <form action="/submit" method="POST">
+    <h3 id="search">Search:</h3>
     <input class="text-box" type="text" name="post-header" placeholder="Type your post title here...">
-    <input class="button" type="submit" value="Search">
+    <input class="search button" type="submit" value="Search">
 </form>
 
 <div class="post container">
@@ -12,7 +16,7 @@
     <% if (data != []) { %>
         <% for (let i=0; i < data.length; i++) { %>
             <post>
-                <p><%= data[i] %> </p>
+                <a href="https://youtu.be/clU8c2fpk2s?si=iVFVjgA_1j7duOVo"><%= data[i] %> </a>
             </post>
         <% } %>
     <% } else {%>
