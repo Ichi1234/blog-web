@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Create your post!</h1>
+
+<form action="/submit" method="POST">
+    <input type="text" name="post-header" placeholder="Type your post title here...">
+    <input type="submit" value="Create the post">
+</form>
+
+<div class="post container">
+
+    <% if (data != []) { %>
+        <% for (let i=0; i < data.length; i++) { %>
+            <post>
+                <p><%= data[i] %> </p>
+            </post>
+        <% } %>
+    <% } else {%>
+        <post></post>
+    <% } %>
+    
+</div>
+
+<%- include("partials/footer.ejs") %>
