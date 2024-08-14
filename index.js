@@ -33,6 +33,12 @@ app.get("/post", (req, res)=> {
     res.render("curpost.ejs", { "title":req.query.title, "content":req.query.content, "id":findIndex});
 });
 
+//user can edit post
+app.get("/edit", (req, res)=> {
+    
+    res.render("edit.ejs", { "data": postData});
+});
+
 // change page number
 app.post("/page", (req, res) => {
    

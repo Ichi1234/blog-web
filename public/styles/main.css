@@ -33,7 +33,6 @@ body {
     border: 0px;
     background-color: transparent;
     font-size: 1.5rem;
-    cursor: pointer;
 
     
 }
@@ -111,6 +110,8 @@ textarea {
     border: none;
     border-radius: 12px;
     height: 2rem;
+
+    cursor: pointer;
 }
 
 #newpost-button {
@@ -192,10 +193,6 @@ post > a {
     flex-direction: column;
     align-items: stretch;
 
-
-    padding-left: 150px;
-    padding-right: 150px;
-
     margin: 50px;
 
     min-height: 100vh;
@@ -208,6 +205,9 @@ post > a {
 
 .cur > h1 {
     font-size: 3rem;
+    padding-left: 150px;
+    padding-right: 150px;
+
     white-space: normal; /* Ensure text wraps */
     overflow-wrap: break-word; /* Break long words if necessary */
     word-wrap: break-word; /* For legacy browsers */
@@ -215,14 +215,27 @@ post > a {
 
 .cur > p {
     font-size: 2rem;
+    padding-left: 150px;
+    padding-right: 150px;
+
     white-space: normal; /* Ensure text wraps */
     overflow-wrap: break-word; /* Break long words if necessary */
     word-wrap: break-word; /* For legacy browsers */
+
+    flex-grow: 1;
+}
+
+.cur > form > .button {
+    width: 100rem;
+    height: 2.2rem;
+
+    margin-left: 70px;
+    font-size: 1rem;
+    
 }
 
 
 /* about webpage */
-
 .about{
     margin-left: 8rem;
     height: 80vh;

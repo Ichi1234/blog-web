@@ -1,9 +1,14 @@
 <%- include("partials/header.ejs") %>
 
+
+
 <div class="cur container">
     <h1> ID: <%= Number(id) + 1 %> <%= title.slice(id.length + 1) %></h1>
-    
     <p><%= content %></p>
+
+    <form action="/edit" method="GET">
+        <input class="edit button" type="submit" value="Edit">
+    </form>
 </div>
 
 <%- include("partials/footer.ejs") %>

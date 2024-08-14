@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+<div class="new container">
+    <form action="/edit" method="POST">
+        <h1 class="feature-title search">Edit Post:</h1>
+        <input class="text-box" type="text" name="post-title" placeholder="Title">
+        <textarea class="text-box" id="content-box" type="text" name="post-content" placeholder="Content"></textarea>
+        <input class="edit button" id="newpost-button" type="submit" value="Edit">
+        <input class="delete button" id="newpost-button" type="submit" value="Delete">
+
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
