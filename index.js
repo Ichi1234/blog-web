@@ -10,11 +10,17 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
+//home webpage
 app.get("/", (req, res) => {
     res.render("index.ejs", {"data": postData});
 });
 
+//create new post webpage
+app.get("/new", (req, res)=> {
+    res.render("post.ejs")
+});
+
+//create new post
 app.post("/submit", (req, res) => {
 
     const postTitle = req.body['post-header'];
@@ -25,8 +31,9 @@ app.post("/submit", (req, res) => {
 
     console.log(postData)
 
-    res.render("index.ejs", {"data": postData});
+    res.redirect("/")
 });
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

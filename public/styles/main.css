@@ -62,10 +62,12 @@ form > .page{
     color: white;
 }
 
+/* text box css */
 .text-box {
     height: 2rem;
     width: 20rem;
     
+    color: white;
     background-color: black;
 
     border: 2px solid #565b5e;
@@ -73,16 +75,46 @@ form > .page{
     margin-right: 10px;
 }
 
-.search.button , .page.button {
+.new > form >.text-box {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#content-box {
+    height: 200%;
+}
+
+.text-box::placeholder {
+    padding-left: 5px;
+}
+
+textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+/* button CSS */
+.button {
     background-color: #2596be;
     color: white;
 
     border: none;
     border-radius: 12px;
     height: 2rem;
+}
+
+#newpost-button {
+    width: 100%;
+    height: 2.2rem;
+
+    font-size: 1rem;
+}
+
+.feature > form > .button {
     width: 10rem;
 }
 
+/* all container CSS */
 .container {
     background-color: #001226;
     padding: 25px;
@@ -90,6 +122,7 @@ form > .page{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    border-radius: 8px;
 }
 .post.container {
     height: 60vh;
@@ -104,6 +137,14 @@ form > .page{
 
     /* Grid here */
     grid-column: 3;
+    grid-row: 3;
+}
+
+.new.container {
+    height: 70vh;
+
+    /* Grid here */
+    grid-column: 2;
     grid-row: 3;
 }
 
