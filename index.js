@@ -20,6 +20,11 @@ app.get("/new", (req, res)=> {
     res.render("post.ejs")
 });
 
+//about webpage
+app.get("/about", (req, res)=> {
+    res.render("about.ejs")
+});
+
 //create new post
 app.post("/submit", (req, res) => {
 
