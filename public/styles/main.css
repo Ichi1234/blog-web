@@ -35,6 +35,18 @@ body {
     
 }
 
+.footer {
+    background-color: #001226;
+    grid-column: 1/-1;
+    grid-row: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 h1.home {
     color: white;
     grid-column: 2;
