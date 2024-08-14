@@ -8,6 +8,8 @@ body {
     gap: 3rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;    
+    
+    grid-template-rows: auto; /* Let rows size based on content */
 }
 
 .header {
@@ -160,10 +162,50 @@ textarea {
     grid-row: 3;
 }
 
+.cur.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+
+    padding-left: 150px;
+    padding-right: 150px;
+
+    margin: 50px;
+
+    min-height: 100vh;
+    /* height: auto; */
+
+    /* Grid here */
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+}
+
+.cur > h1 {
+    font-size: 3rem;
+    white-space: normal; /* Ensure text wraps */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    word-wrap: break-word; /* For legacy browsers */
+}
+
+.cur > * {
+    color: white;
+    
+}
+
+.cur > p {
+    font-size: 2rem;
+    white-space: normal; /* Ensure text wraps */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    word-wrap: break-word; /* For legacy browsers */
+}
+
 post > a {
     background-color: #2596be;
     color: white;
+    text-decoration: none;
 
+    padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
 

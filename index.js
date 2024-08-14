@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 var postData = [];
+var curPage = 1;
 
 app.use(express.static("public"));
 
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //home webpage
 app.get("/", (req, res) => {
-    res.render("index.ejs", {"data": postData});
+    res.render("index.ejs", {"data": postData, "page": curPage});
 });
 
 //create new post webpage
@@ -25,18 +26,37 @@ app.get("/about", (req, res)=> {
     res.render("about.ejs")
 });
 
+//user click at post link
+app.get("/post", (req, res)=> {
+    res.render("curpost.ejs", { "title":req.query.title, "content":req.query.content});
+});
+
+// change page number
+app.post("/page", (req, res) => {
+   
+    if (req.body['page-num'] < 0) {
+        curPage = 1;
+    }
+
+    else {
+        curPage = Math.floor(Number(req.body['page-num']));
+    }
+
+
+    res.redirect("/");
+});
 //create new post
 app.post("/submit", (req, res) => {
 
-    const postTitle = req.body['post-header'];
+    const newPost = [`${postData.length + 1}.${req.body['post-title']}`, req.body['post-content']];
 
-    if (req.body['post-header'] && typeof postTitle === 'string') {
-        postData.push(postTitle);
+    if (req.body['post-title'] && typeof newPost[0] === 'string') {
+        postData.push(newPost);
     }
 
-    console.log(postData)
+    console.log(postData);
 
-    res.redirect("/")
+    res.redirect("/");
 });
 
 
