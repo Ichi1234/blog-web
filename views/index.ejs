@@ -26,7 +26,7 @@
             <% } %>
 
             <post>
-                <a href="/post?<%= 'title=' + encodeURIComponent(data[i][0]) + '&content=' + encodeURIComponent(data[i][1]) %>">
+                <a href="/post?<%= 'title=' + encodeURIComponent(data[i][0]) + '&content=' + encodeURIComponent(data[i][1]) + '&id=' + encodeURIComponent(i)%>">
                     <% const newTitle = data[i][0]; %>
 
                     <% if (newTitle.length >= 70) { %>
@@ -41,12 +41,8 @@
     <% } else {%>
         <post></post>
     <% } %>
+    <p>Page: <%= page %> / <%= Math.floor(data.length / 10) + 1 %></p>
     
-    <% if (page < 10) { %>
-        <p>Page: <%= page %> / 1</p>
-    <% } else { %>
-        <p>Page:<%= page %> / <%= Math.floor(page/10) %></p>
-    <% } %>
 
 </div>
 

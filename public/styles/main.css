@@ -161,8 +161,14 @@ post > a {
 
 }
 
-/* page number text */
+/* page number label */
 .post > p {
+    font-weight: bold;
+
+    position: absolute;
+    bottom: 10%;
+
+    align-self: flex-end;
 }
 
 .feature.container {

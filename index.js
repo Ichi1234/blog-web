@@ -28,7 +28,9 @@ app.get("/about", (req, res)=> {
 
 //user click at post link
 app.get("/post", (req, res)=> {
-    res.render("curpost.ejs", { "title":req.query.title, "content":req.query.content});
+    const findIndex = req.query.id.toString();
+
+    res.render("curpost.ejs", { "title":req.query.title, "content":req.query.content, "id":findIndex});
 });
 
 // change page number
