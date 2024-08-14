@@ -45,6 +45,7 @@ app.post("/page", (req, res) => {
 
     res.redirect("/");
 });
+
 //create new post
 app.post("/submit", (req, res) => {
 

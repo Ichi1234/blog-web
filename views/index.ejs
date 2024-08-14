@@ -21,7 +21,7 @@
 <div class="post container">
     <% if (data.length != 0) { %>
         <% for (let i= (page - 1) * 10 ; i < page * 10; i++) { %>
-            <% if (i == data.length) { %>
+            <% if (i >= data.length) { %>
                 <% break; %>
             <% } %>
 
@@ -42,6 +42,12 @@
         <post></post>
     <% } %>
     
+    <% if (page < 10) { %>
+        <p>Page: <%= page %> / 1</p>
+    <% } else { %>
+        <p>Page:<%= page %> / <%= Math.floor(page/10) %></p>
+    <% } %>
+
 </div>
 
 <%- include("partials/footer.ejs") %>
