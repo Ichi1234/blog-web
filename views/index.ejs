@@ -20,19 +20,20 @@
 
 <div class="post container">
     <% if (data.length != 0) { %>
-        <% for (let i= (page - 1) * 10 ; i < page * 10; i++) { %>
+        <% for (let i = (page - 1) * 10 ; i < page * 10; i++) { %>
             <% if (i >= data.length) { %>
                 <% break; %>
             <% } %>
-
+            
+            <!-- Insert post to container -->
             <post>
-                <a href="/post?<%= 'title=' + encodeURIComponent(data[i][0]) + '&content=' + encodeURIComponent(data[i][1]) + '&id=' + encodeURIComponent(i)%>">
+                <a href="/post?<%= 'title=' + encodeURIComponent(data[i][0]) + '&content=' + encodeURIComponent(data[i][1]) + '&id=' + encodeURIComponent(`${i + 100}`)%>">
                     <% const newTitle = data[i][0]; %>
 
                     <% if (newTitle.length >= 70) { %>
-                        <%= newTitle.slice(0, 65) + "......." %>
+                        <%= (i + 1) + "." + newTitle.slice(0, 65) + "......." %>
                     <% } else { %>
-                        <%= newTitle %>
+                        <%= (i + 1) + "." + newTitle %>
                     <% } %>
                 </a>
             </post>

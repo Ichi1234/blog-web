@@ -57,7 +57,7 @@ app.post("/page", (req, res) => {
 //create new post
 app.post("/submit", (req, res) => {
 
-    const newPost = [`${postData.length + 1}.${req.body['post-title']}`, req.body['post-content']];
+    const newPost = [`${req.body['post-title']}`, req.body['post-content']];
 
     if (req.body['post-title'] && typeof newPost[0] === 'string') {
         postData.push(newPost);
