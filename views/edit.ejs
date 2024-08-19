@@ -6,10 +6,13 @@
         <input type="hidden" name="curID" value="<%= id %>">
         <input class="text-box" type="text" name="edit-title" placeholder="Title" value=<%= title %>>
         <textarea class="text-box" id="content-box" type="text" name="edit-content" placeholder="Content"><%= content %></textarea>
-        <input class="edit button" id="newpost-button" type="submit" value="Edit">
-        <input class="delete button" id="newpost-button" type="submit" value="Delete">
-
+        <input class="edit button" id="newpost-button" type="submit" value="Confirm Edit">
     </form>
+
+    <form action="/delete" method="POST">
+        <input class="delete button" id="newpost-button" type="submit" value="Delete Post">
+    </form>
+
 </div>
 
 <%- include("partials/footer.ejs") %>
