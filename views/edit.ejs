@@ -3,10 +3,10 @@
 <div class="new container">
     <form action="/edit" method="POST">
         <h1 class="feature-title search">Edit Post:</h1>
-        <input type="hidden" name="curID" value="<%= id %>">
-        <input class="text-box" type="text" name="edit-title" placeholder="Title" value=<%= title %>>
-        <textarea class="text-box" id="content-box" type="text" name="edit-content" placeholder="Content"><%= content %></textarea>
-        <input class="edit button" id="newpost-button" type="submit" value="Confirm Edit">
+        <input type="hidden" name="editId" value="<%= id %>">
+        <input class="text-box" type="text" name="editTitle" placeholder="Title" value=<%= title %>>
+        <textarea class="text-box" id="content-box" type="text" name="editContent" placeholder="Content"><%= content %></textarea>
+        <input class="edit button" id="newpost-button" type="submit" value="Confirm">
     </form>
 
     <form action="/delete" method="POST">

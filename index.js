@@ -37,10 +37,9 @@ app.get("/post", (req, res)=> {
 app.get("/edit", (req, res)=> {
     
     res.render("edit.ejs", { 
-        "id": req.query.curId,
+        "id": req.query.curID,
         "title": req.query.curTitle,
         "content": req.query.curContent,
-        "data": postData
     });
 });
 
@@ -74,11 +73,28 @@ app.post("/submit", (req, res) => {
 
 //edit post yes I know I should use PUT right? However, this is my first web project please have mercy.
 app.post("/edit", (req, res) => {
+    const changeTitle = req.body['editTitle'];
+    const changeContent = req.body['editContent'];
+    const changeId = req.body['editId'];
+
+    console.log("Received ID:", changeId);
+    console.log("Received Title:", changeTitle);
+    console.log("Received Content:", changeContent);
+
+    for (let findEdit = 0; findEdit < postData.length; findEdit++) {
+        if (postData[findEdit][0] == changeId) {
+            postData[findEdit][1] = changeTitle;
+            postData[findEdit][2] = changeContent;
+            break;
+        }
+    }
+
     res.redirect("/");
 });
 
 //delete the post (req from edit.ejs)
 app.post("/delete", (req, res) => {
+    
     res.redirect("/");
 });
 
