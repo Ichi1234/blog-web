@@ -77,10 +77,6 @@ app.post("/edit", (req, res) => {
     const changeContent = req.body['editContent'];
     const changeId = req.body['editId'];
 
-    console.log("Received ID:", changeId);
-    console.log("Received Title:", changeTitle);
-    console.log("Received Content:", changeContent);
-
     for (let findEdit = 0; findEdit < postData.length; findEdit++) {
         if (postData[findEdit][0] == changeId) {
             postData[findEdit][1] = changeTitle;
@@ -94,7 +90,16 @@ app.post("/edit", (req, res) => {
 
 //delete the post (req from edit.ejs)
 app.post("/delete", (req, res) => {
-    
+
+    const deleteId = req.body['deleteID'];
+
+    for (let deleteIt = 0; deleteIt < postData.length; deleteIt++) {
+        if (postData[deleteIt][0] == deleteId) {
+            postData.splice(deleteIt, 1);
+            break;
+        }
+    }
+
     res.redirect("/");
 });
 
