@@ -3,10 +3,13 @@
 
 
 <div class="cur container">
-    <h1> ID: <%= Number(id) + 1 %> <%= title %></h1>
+    <h1> ID: <%= id %> <%= title %></h1>
     <p><%= content %></p>
 
     <form action="/edit" method="GET">
+        <input type="hidden" name="curID" value="<%= id %>">
+        <input type="hidden" name="curTitle" value="<%= title %>">
+        <input type="hidden" name="curContent" value="<%= content %>">
         <input class="edit button" type="submit" value="Edit">
     </form>
 </div>

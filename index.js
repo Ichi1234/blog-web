@@ -36,7 +36,13 @@ app.get("/post", (req, res)=> {
 //user can edit post
 app.get("/edit", (req, res)=> {
     
-    res.render("edit.ejs", { "data": postData});
+    // get request come from curpost.ejs
+    res.render("edit.ejs", { 
+        "id": req.query.curId,
+        "title": req.query.curTitle,
+        "content": req.query.curContent,
+        "data": postData
+    });
 });
 
 // change page number
@@ -57,9 +63,9 @@ app.post("/page", (req, res) => {
 //create new post
 app.post("/submit", (req, res) => {
 
-    const newPost = [`${req.body['post-title']}`, req.body['post-content']];
+    const newPost = [postData.length + 101 , req.body['post-title'], req.body['post-content']];
 
-    if (req.body['post-title'] && typeof newPost[0] === 'string') {
+    if (req.body['post-title'] && typeof newPost[1] === 'string') {
         postData.push(newPost);
     }
 

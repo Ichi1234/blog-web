@@ -27,8 +27,8 @@
             
             <!-- Insert post to container -->
             <post>
-                <a href="/post?<%= 'title=' + encodeURIComponent(data[i][0]) + '&content=' + encodeURIComponent(data[i][1]) + '&id=' + encodeURIComponent(`${i + 100}`)%>">
-                    <% const newTitle = data[i][0]; %>
+                <a href="/post?<%= 'title=' + encodeURIComponent(data[i][1]) + '&content=' + encodeURIComponent(data[i][2]) + '&id=' + encodeURIComponent(data[i][0])%>">
+                    <% const newTitle = data[i][1]; %>
 
                     <% if (newTitle.length >= 70) { %>
                         <%= (i + 1) + "." + newTitle.slice(0, 65) + "......." %>
